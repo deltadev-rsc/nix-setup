@@ -1,5 +1,3 @@
-{ config, pkgs, ... }: 
-
 {
     programs.waybar = {
         enable = true;
@@ -13,6 +11,11 @@
                 margin-bottom = 2;
                 margin-right = 6;
                 margin-left = 6;
+                
+                output = [
+                    "eDP-1"
+                    "HDMI-A-1"
+                ];
 
                 modules-left = [
                     "custom/logo"
