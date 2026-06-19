@@ -74,7 +74,7 @@
 
   	programs.hyprland = {
 		enable = true;
-		withUWSM = true;
+		withUWSM = false;
 		xwayland.enable = true;
 	};
 
@@ -88,26 +88,15 @@
 		# Basics
 		vim
   		wget
+		curl
 		git
 		lazygit
 		kitty
 		qemu
-		fastfetch
-		telegram-desktop
-		btop
-		wofi 
 		home-manager 
 		neovim
-		zed-editor
 		gnused
 		unzip
-		pavucontrol
-		dpkg	
-		eza
-		bat
-		tree
-		yazi
-		zoxide	
 		nftables		
 	
 		# Meme
