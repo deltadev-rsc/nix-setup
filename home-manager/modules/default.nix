@@ -2,8 +2,9 @@
 
 {
     imports = [
-        ./hyprland
         ./waybar 
         ./wofi
+        ./hyprland
+        ./kitty
     ];
 }
