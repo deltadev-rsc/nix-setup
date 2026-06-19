@@ -9,7 +9,11 @@
                 layer = "top";
                 position = "top";
                 height = 30;
-                
+                margin-top = 2;
+                margin-bottom = 2;
+                margin-right = 6;
+                margin-left = 6;
+
                 modules-left = [
                     "custom/logo"
                     "hyprland/workspaces"
@@ -39,6 +43,9 @@
                 };
 
                 "hyprland/workspaces" = {
+                    disable-scroll = true;
+                    show-special = false;
+                    all-outputs = false;
                     on-click = "activate";
                     format = "{icon}"; 
                     format-icons = {
@@ -54,12 +61,7 @@
                     }; 
 
                     "persistent-workspaces" = {
-                        "1" = [];
-                        "2" = [];
-                        "3" = [];
-                        "4" = [];
-                        "5" = [];
-                        "6" = [];
+                        "*" = 6;
                     };
                 };
 
