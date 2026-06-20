@@ -1,3 +1,5 @@
+{ config, pkgs, ... }: 
+
 {
     programs.waybar = {
         enable = true;
@@ -46,9 +48,8 @@
                 };
 
                 "hyprland/workspaces" = {
-                    disable-scroll = true;
+                    disable-scroll = false;
                     show-special = false;
-                    all-outputs = false;
                     on-click = "activate";
                     format = "{icon}"; 
                     format-icons = {
