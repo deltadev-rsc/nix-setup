@@ -6,5 +6,6 @@
         ./wofi
         ./hyprland
         ./kitty
+        ./utils
     ];
 }
