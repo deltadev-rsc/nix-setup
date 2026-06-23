@@ -5,10 +5,23 @@
       		./hardware-configuration.nix
     	];
 
-	# аааааааа системд вирус бут
-  	boot.loader.systemd-boot.enable = true;
-  	boot.loader.efi.canTouchEfiVariables = true;
-  	boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot.loader = {
+		efi = {
+			canTouchEfiVariables = true;
+			efiSysMountPoint = "/boot";
+		};
+
+		grub = {
+			enable = true;
+			efiSupport = true;
+			device = "nodev";
+			useOSProber = true;
+		};
+
+		systemd-boot.enable = false;
+	};
+
+	boot.kernelPackages = pkgs.linuxPackages_latest;
 
   	networking.hostName = "nixos";
   	networking.wireless.enable = true;
@@ -28,6 +41,9 @@
     		LC_TELEPHONE = "ru_RU.UTF-8";
     		LC_TIME = "ru_RU.UTF-8";
   	};
+
+	# Flatpak
+	services.flatpak.enable = true;
 
   	services.xserver.enable = true;
   	services.displayManager.sddm.enable = true;
@@ -71,7 +87,7 @@
   	programs.firefox.enable = true;
 
   	nixpkgs.config.allowUnfree = true;
-
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
   	programs.hyprland = {
 		enable = true;
 		withUWSM = false;
@@ -105,24 +121,39 @@
 		cbonsai		
 		uwufetch
 
-		# Dev tools
+		# ===============
+		# || Dev tools ||
+		# ===============
+
+		# Build systems
 		gnumake
+		cargo
+		cmake
+		meson
+		ninja
+
+		# Compilers
 		gcc
  		llvmPackages_latest.clang
 		llvmPackages_latest.libclang
 		llvmPackages_latest.llvm
 		clang-tools
-		lld
+		go
+		gopls
+		gotools
+		rustc
+		rustup
 		nasm
+		lld
+		
+		# Interpretors and libraries
 		lua
 		python3
 		lua53Packages.luarocks
 		nodejs
-		cargo 
-		rustc
 		pkg-config
 		openssl
-		meson
+		ncurses
   	];
 
   	fonts.packages = with pkgs; [
