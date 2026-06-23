@@ -7,5 +7,6 @@
         ./hyprland
         ./kitty
         ./utils
+        ./swaync
     ];
 }
