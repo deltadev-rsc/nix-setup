@@ -34,7 +34,9 @@
         tree
         zoxide
         pfetch 
-
+        ufetch
+        screenfetch
+        
         libnotify
         xdg-desktop-portal-gtk
         xdg-desktop-portal-hyprland
