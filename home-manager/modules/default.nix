@@ -8,5 +8,6 @@
         ./kitty
         ./utils
         ./swaync
+        ./vim
     ];
 }
