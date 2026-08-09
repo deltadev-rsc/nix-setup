@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  	imports = [ # Include the results of the hardware scan.
-      		./hardware-configuration.nix
-    	];
+    imports = [  
+        ./hardware-configuration.nix
+    ];
 
 	boot.loader = {
 		efi = {
@@ -11,14 +11,7 @@
 			efiSysMountPoint = "/boot";
 		};
 
-		grub = {
-			enable = true;
-			efiSupport = true;
-			device = "nodev";
-			useOSProber = true;
-		};
-
-		systemd-boot.enable = false;
+		systemd-boot.enable = true;
 	};
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -55,15 +48,17 @@
 
   	services.printing.enable = true;
 
-  	services.pulseaudio.enable = false;
   	security.rtkit.enable = true;
   	services.pipewire = {
     		enable = true;
     		alsa.enable = true;
     		alsa.support32Bit = true;
-    		pulse.enable = true;
+            pulse.enable = true;
+            wireplumber.enable = true;
     		jack.enable = true;
   	};
+
+    services.pulseaudio.enable = false;
 
   	services.xserver.libinput.enable = true;
 
@@ -114,7 +109,13 @@
 		gnused
 		unzip
 		nftables		
-	
+        pipewire
+        wireplumber
+        pavucontrol
+        alsa-utils
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
+
 		# Meme
 		cava
 		cmatrix
@@ -141,11 +142,14 @@
 		go
 		gopls
 		gotools
-		rustc
+        ghc
+        rustc
 		rustup
 		nasm
 		lld
-		
+        sass
+        sassc
+
 		# Interpretors and libraries
 		lua
 		python3
