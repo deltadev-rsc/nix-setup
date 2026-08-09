@@ -9,14 +9,13 @@
 window#waybar {
     margin: 25px 25px;
     padding: 25px 25px;
-    opacity: 0.95;
     background-color: #11111b;
     transition-property: background-color;
     transition-duration: 0.10s;
 }
 
 window#waybar.hidden {
-    opacity: 0.56;
+    opacity: 0.97;
 }
 
 #workspaces {
