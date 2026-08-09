@@ -10,7 +10,7 @@
         obs-studio
         telegram-desktop
         zed-editor
-        pavucontrol
+        vlc
 
         # CLI and TUI
         fzf
@@ -38,7 +38,5 @@
         screenfetch
         
         libnotify
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-hyprland
     ];
 }
