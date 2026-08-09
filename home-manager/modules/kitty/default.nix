@@ -41,8 +41,8 @@
         mark3_foreground = "#1e1e2e";
         mark3_background = "#74c7ec";
 
-        color0 = "#313244";
-        color8 = "#45475a";
+        color0 = "#1e1e2e";
+        color8 = "#313244";
 
         color1 = "#f38ba8";
         color9 = "#f38ba8";
