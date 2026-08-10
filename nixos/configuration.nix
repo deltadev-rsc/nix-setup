@@ -3,18 +3,9 @@
 {
     imports = [  
         ./hardware-configuration.nix
+        ./boot.nix  
+        ./services.nix  
     ];
-
-	boot.loader = {
-		efi = {
-			canTouchEfiVariables = true;
-			efiSysMountPoint = "/boot";
-		};
-
-		systemd-boot.enable = true;
-	};
-
-	boot.kernelPackages = pkgs.linuxPackages_latest;
 
   	networking.hostName = "nixos";
   	networking.wireless.enable = true;
@@ -34,33 +25,6 @@
     		LC_TELEPHONE = "ru_RU.UTF-8";
     		LC_TIME = "ru_RU.UTF-8";
   	};
-
-	# Flatpak
-	services.flatpak.enable = true;
-
-  	services.xserver.enable = true;
-  	services.displayManager.sddm.enable = true;
-  	services.desktopManager.plasma6.enable = true;
-  	services.xserver.xkb = {
-    		layout = "us";
-    		variant = "";
-  	};
-
-  	services.printing.enable = true;
-
-  	security.rtkit.enable = true;
-  	services.pipewire = {
-    		enable = true;
-    		alsa.enable = true;
-    		alsa.support32Bit = true;
-            pulse.enable = true;
-            wireplumber.enable = true;
-    		jack.enable = true;
-  	};
-
-    services.pulseaudio.enable = false;
-
-  	services.xserver.libinput.enable = true;
 
   	security.doas.enable = true;
   	security.doas.extraRules = [{
@@ -149,6 +113,7 @@
 		lld
         sass
         sassc
+        vala
 
 		# Interpretors and libraries
 		lua
@@ -157,8 +122,8 @@
 		nodejs
 		pkg-config
 		openssl
-		ncurses
-  	];
+        ncurses
+    ];
 
   	fonts.packages = with pkgs; [
   		nerd-fonts.jetbrains-mono
