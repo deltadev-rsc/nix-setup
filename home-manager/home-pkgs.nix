@@ -2,6 +2,7 @@
 
 {
     nixpkgs.config.allowUnfree = true;
+ 
     home.packages = with pkgs; [
         waybar
         swaynotificationcenter
@@ -25,6 +26,8 @@
         slurp
         swaybg
         hyprlock
+        hypridle
+        hyprpaper
         hyprpicker
         peaclock
         dpkg
@@ -36,7 +39,12 @@
         pfetch 
         ufetch
         screenfetch
-        
+ 
+        (python3.withPackages (python-pkgs: with python-pkgs; [
+            pygobject3
+            gtk3
+        ]))
+
         libnotify
     ];
 }
