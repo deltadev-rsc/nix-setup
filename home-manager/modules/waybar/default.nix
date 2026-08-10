@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 
 {
     programs.waybar = {
@@ -9,11 +9,11 @@
                 layer = "top";
                 position = "top";
                 height = 30;
-                margin-top = 2;
-                margin-bottom = 2;
-                margin-right = 6;
-                margin-left = 6;
-                
+                # margin-top = 2;
+                # margin-bottom = 2;
+                # margin-right = 6;
+                # margin-left = 6;
+
                 output = [
                     "eDP-1"
                     "HDMI-A-1"
@@ -36,6 +36,7 @@
                     "network"
                     "wireplumber"
                     "battery"
+                    "custom/power"
                 ];
 
                 "wlr/taskbar" = {
@@ -51,7 +52,7 @@
                     disable-scroll = true;
                     show-special = false;
                     on-click = "activate";
-                    format = "{icon}"; 
+                    format = "{icon}";
                     format-icons = {
                         default = "";
                         "1" = "";
@@ -62,7 +63,7 @@
                         "6" = "󰠮";
                         "active" = "󱓻";
                         "urgent" = "󱓻";
-                    }; 
+                    };
 
                     "persistent-workspaces" = {
                         "*" = 6;
@@ -136,7 +137,7 @@
                         charging = [ "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
                         default = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
                     };
-                    
+
                     format-full = "Charged ";
                     interval = 5;
                     states = {
@@ -145,6 +146,12 @@
                     };
 
                     tooltip = false;
+                };
+
+                "custom/power" = {
+                    format = " ⏻ ";
+                    tooltip = false;
+                    on-click = "~/wofi-hyprland-power-menu/wofi-power-menu.sh";
                 };
             };
         };
