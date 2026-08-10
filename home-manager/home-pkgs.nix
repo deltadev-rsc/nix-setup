@@ -1,8 +1,11 @@
-{ config, pkgs, ... }:
+ config, pkgs, ... }:
 
 {
     nixpkgs.config.allowUnfree = true;
- 
+
+    services.hypridle.enable = true;
+    services.hyprpaper.enable = true;
+
     home.packages = with pkgs; [
         waybar
         swaynotificationcenter
@@ -25,10 +28,12 @@
         grim
         slurp
         swaybg
+
         hyprlock
-        hypridle
-        hyprpaper
         hyprpicker
+        hyprpaper
+        hypridle
+
         peaclock
         dpkg
         yazi
@@ -36,10 +41,10 @@
         bat
         tree
         zoxide
-        pfetch 
+        pfetch
         ufetch
         screenfetch
- 
+
         (python3.withPackages (python-pkgs: with python-pkgs; [
             pygobject3
             gtk3
