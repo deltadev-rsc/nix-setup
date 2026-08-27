@@ -79,6 +79,9 @@
         alsa-utils
         xdg-desktop-portal-gtk
         xdg-desktop-portal-hyprland
+        wine
+        winetricks
+        mc
 
 		# Meme
 		cava
@@ -114,6 +117,13 @@
         sass
         sassc
         vala
+        zig
+        odin
+        nim
+        stdenv.cc.cc
+
+        automake
+        autoconf
 
 		# Interpretors and libraries
 		lua
