@@ -30,10 +30,11 @@
             hl.on("hyprland.start", function ()
                 hl.exec_cmd("waybar")
                 hl.exec_cmd("nm-applet")
-                hl.exec_cmd("swaybg -i ~/walls/catp/catppuccin-wall-9.png -m fill -o eDP-1")
-                hl.exec_cmd("pipewire &")
-                hl.exec_cmd("pipewire-pulse &")
-                hl.exec_cmd("wireplumber &")
+                hl.exec_cmd("swaybg -i ~/walls/tokyonight/tokyonight-wall-3.png -m fill -o eDP-1")
+                -- hl.exec_cmd("pipewire &")
+                -- hl.exec_cmd("pipewire-pulse &")
+                -- hl.exec_cmd("wireplumber &")
+                hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
             end)
 
             -------------------------------
@@ -55,8 +56,11 @@
                     col = {
                         active_border = {
                             colors = {
-                                "rgb(b4befe)",
-                                "rgb(89b4fa)"
+                                --- Tokyonight
+                                "rgb(7aa2f7)",
+                                
+                                --- Ayu Mirage 
+                                --- "rgb(fbc965)"
                             },
                             angle = 45
                         },
@@ -73,8 +77,8 @@
                     rounding       = 4,
                     rounding_power = 4,
 
-                    active_opacity   = 0.96,
-                    inactive_opacity = 0.96,
+                    active_opacity   = 0.98,
+                    inactive_opacity = 0.98,
 
                     shadow = {
                         enabled      = true,
@@ -85,8 +89,8 @@
 
                     blur = {
                         enabled   = true,
-                        size      = 3,
-                        passes    = 4,
+                        size      = 4,
+                        passes    = 5,
                         vibrancy  = 0.1996,
                     },
                 },
