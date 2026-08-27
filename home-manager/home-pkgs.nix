@@ -1,4 +1,4 @@
- config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
     nixpkgs.config.allowUnfree = true;
@@ -15,6 +15,8 @@
         telegram-desktop
         zed-editor
         vlc
+        gnome-calculator
+        gnome-calendar
 
         # CLI and TUI
         fzf
@@ -28,6 +30,8 @@
         grim
         slurp
         swaybg
+        wlogout
+        helix
 
         hyprlock
         hyprpicker
