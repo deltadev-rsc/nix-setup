@@ -13,7 +13,7 @@
                 text = "Tvoy hypr zalochen. Vvedi parol";
                 font_size = 36;
                 font_family = "JetBrainsMono";
-                color = "rgb(cdd6f4)";
+                color = "rgb(c0caf5)";
                 position = "0, 600";
                 halign = "center";
                 walign = "center";
@@ -22,7 +22,7 @@
 
             background = [
                 {
-                    path = "~/walls/catp/catppuccin-wall-10.png";
+                    path = "~/walls/tokyonight/tokyonight-wall-3.png";
                     blur_passes = 1;
                     blur_size = 1;
                 }
@@ -34,9 +34,9 @@
                     position = "0, -80";
                     monitor = "";
                     dots_center = true;
-                    font_color = "rgb(cdd6f4)";
-                    inner_color = "rgb(313244)";
-                    outer_color = "rgb(1e1e2e)";
+                    font_color = "rgb(c0caf5)";
+                    inner_color = "rgb(1a1b26)";
+                    outer_color = "rgb(404767)";
                     outline_thickness = 5;
                     placeholder_text = "sussy baka";
                     shadow_passes = 1;
